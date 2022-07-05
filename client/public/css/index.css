@@ -1,13 +1,16 @@
 body {
-	
-}
+  background-image: url("../images/campus.png");
+  background-color: #cccccc;
+  background-repeat: no-repeat;
+  background-position: center;
+ }
 
 #splash_title {
 	width: 100%;
   font-size: 100px;
   color: red;
   opacity: 0.85;
-  text-shadow: 4px 4px 4px rgba(255, 255, 255);
+  text-shadow: 4px 4pcx 4px rgba(255, 255, 255);
   text-align: center;
 }
 
