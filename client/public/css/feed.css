@@ -34,6 +34,7 @@ footer {
 	position: fixed;
 	right: 30px;
 	top: 10px;
+	cursor: pointer;
 }
 
 a {
