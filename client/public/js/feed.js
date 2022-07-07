@@ -1,5 +1,5 @@
 document.getElementById('portal_button').addEventListener('click', function () {
-    goToLocation('https://en.wikipedia.org/wiki/Squirrel');
+    openTab('https://en.wikipedia.org/wiki/Squirrel');
   });
 
 function feedItem(title, body, linkUrl, imageUrl) {
@@ -9,16 +9,33 @@ function feedItem(title, body, linkUrl, imageUrl) {
     this.imageUrl = imageUrl;
 };
 
-let feedOne = new feedItem("Squirrel Stabs Chipmunk", "Phat Gus the Squirrel STABS Alvin the Chipmunk Using A Birch Stick!", "https://markrober.store/products/phat-gus-plush-toy", "../images/phatgus.png");
-let feedTwo = new feedItem("Super Fast Squirrel Runs For Eternity", "Jimmy the squirrel was caught in an infinitely looping hamster wheel, running forever.", "https://www.youtube.com/watch?v=1tKTZT0sHS4", "../images/jimmythesquirrel.jpg");
-let feedThree = new feedItem("Are Squirrels The Next Earth Overlords?", "Simon the Squirrel solving a 4D rubix cube leads researchers to question their genius.", "https://ourfunkypets.com/how-intelligent-are-squirrels/", "../images/smartsquirrel.jpg");
+let feedOne = new feedItem(
+    "Squirrel Stabs Chipmunk", 
+    "Phat Gus the Squirrel STABS Alvin the Chipmunk Using A Birch Stick!", 
+    "https://markrober.store/products/phat-gus-plush-toy", 
+    "../images/phatgus.png"
+    );
+
+let feedTwo = new feedItem(
+    "Super Fast Squirrel Runs For Eternity",
+    "Jimmy the squirrel was caught in an infinitely looping hamster wheel, running forever.",
+    "https://www.youtube.com/watch?v=1tKTZT0sHS4", 
+    "../images/jimmythesquirrel.jpg"
+    );
+    
+let feedThree = new feedItem(
+    "Are Squirrels The Next Earth Overlords?", 
+    "Simon the Squirrel solving a 4D rubix cube leads researchers to question their genius.", 
+    "https://ourfunkypets.com/how-intelligent-are-squirrels/", 
+    "../images/smartsquirrel.jpg"
+    );
 
 let currentStories = [feedOne, feedTwo, feedThree];
 
 function displayItem(feedItem) {
     document.getElementById('newsfeed').innerHTML +=
-    '<img src="' + feedItem.imageUrl + '" class="feedImage"/>'
-    + '<b><a href="' + feedItem.linkUrl + '">' + feedItem.title + '</a></b>'
+    '<img src="' + feedItem.imageUrl + '" class="feedImage"/><br />'
+    + '<b><a href="' + feedItem.linkUrl + '">' + feedItem.title + '</a></b><br />'
     + '<p>' + feedItem.body + '</p><hr />';
 }
 

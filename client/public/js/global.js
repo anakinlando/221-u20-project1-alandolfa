@@ -3,3 +3,7 @@
 function goToLocation(location) {
 	window.location = location; //change to page passed.
 }
+
+function openTab(location) {
+	window.open(location, '_blank');
+}
