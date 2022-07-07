@@ -1,5 +1,5 @@
 body {
-  background-image: url("../images/campus.png");
+  background-image: url("../images/squirrelbackground.jpg");
   background-color: #ffffff;
   background-repeat: no-repeat;
   background-position: center;
@@ -8,14 +8,14 @@ body {
 #splash_title {
 	width: 100%;
   font-size: 100px;
-  color: red;
+  color: rgba(250,200,150);
   opacity: 0.85;
   text-shadow: 4px 4pcx 4px rgba(255, 255, 255);
   text-align: center;
 }
 
 .menu_button {
-	background-color: rgba(255, 0, 0, 0.5);
+	background-color: blanchedalmond;
     font-size: 28px;
     color: white;
     cursor: pointer;
