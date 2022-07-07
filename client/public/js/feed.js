@@ -18,14 +18,14 @@ let feedOne = new feedItem(
 
 let feedTwo = new feedItem(
     "Super Fast Squirrel Runs For Eternity",
-    "Jimmy the squirrel was caught in an infinitely looping hamster wheel, running forever.",
+    "Jimmy the Squirrel was caught in an infinitely looping hamster wheel, running forever. The hamster wheel allegedly fuels on the raw, unfiltered fear that the squirrel exherts, knowing that he might never return to his family. Ironically, the squirrel can go free easily if he stops being afraid, but nobody will ever tell him that.",
     "https://www.youtube.com/watch?v=1tKTZT0sHS4", 
     "../images/jimmythesquirrel.jpg"
     );
     
 let feedThree = new feedItem(
     "Are Squirrels The Next Earth Overlords?", 
-    "Simon the Squirrel solving a 4D rubix cube leads researchers to question their genius.", 
+    "Simon the Squirrel solving a 4D rubix cube leads researchers to question their genius. Simon the Squirrel was never an ordinary squirrel. From the womb, his parents dropped him off of a tree. Afterwards, Billy the Stranger adopted Simon the Squirrel and took him in for an IQ test. Simon the Squirrel demonstrated more proficiency than most college students, leading everyone to wonder just how powerful a squirrel's mind can be.", 
     "https://ourfunkypets.com/how-intelligent-are-squirrels/", 
     "../images/smartsquirrel.jpg"
     );
