@@ -43,7 +43,7 @@ footer {
 }
 
 a {
-	color: blue;
+	color: rgb(255, 179, 0);
 	text-decoration: none;
 }
 
@@ -57,13 +57,17 @@ a {
 #newsfeed {
 	max-width: 600px;
 	min-width: 600px;
+	color:gray;
+}
+
+#home_page {
+	cursor: pointer;
+	margin-left: 10px;
 }
 
 .feedImage {
 	max-width: 150px;
 	max-height: 150px;
+	margin-right:5px;
 }
 
-#home_page {
-	cursor: pointer;
-}
