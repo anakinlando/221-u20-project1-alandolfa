@@ -12,6 +12,7 @@ body {
   opacity: 0.85;
   text-shadow: 4px 4pcx 4px rgba(255, 255, 255);
   text-align: center;
+  font-family: 'Bradley Hand', sans-serif;
 }
 
 .menu_button {
@@ -21,6 +22,7 @@ body {
     cursor: pointer;
     text-align: center;
     user-select: none;
+    font-family: 'Luminari', sans-serif;
 }
 
 .background_button {

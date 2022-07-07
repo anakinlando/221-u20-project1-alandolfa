@@ -11,7 +11,7 @@ function feedItem(title, body, linkUrl, imageUrl) {
 
 let feedOne = new feedItem(
     "Squirrel Stabs Chipmunk", 
-    "Phat Gus the Squirrel STABS Alvin the Chipmunk Using A Birch Stick!", 
+    "Phat Gus the Squirrel has acquired a fallen sharp stick from a birch tree. Using this stick, he instigated a fight with Alvin the Chipmunk. From there on, they proceeded to engage in a legendary duel with Phat Gus's Stick vs Alvin's Charisma. In the end, the practical weaponry of Phat Gus the Squirrel outmatched the charm of Alvin the Chipmunk.", 
     "https://markrober.store/products/phat-gus-plush-toy", 
     "../images/phatgus.png"
     );
@@ -45,4 +45,4 @@ window.addEventListener('load', function() {
 
 document.getElementById('home_page').addEventListener('click', function () {
     goToLocation('/');
-});s
+});

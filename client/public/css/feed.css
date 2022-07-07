@@ -11,11 +11,13 @@ header {
 
 	background-color: rgba(150,100,50);
 	font-size: 30px;
+	font-family: 'Bradley Hand', sans-serif;
 	color: white;
 }
 
 body {
 	background-color: bisque;
+	font-family: 'Monaco', sans-serif;
 }
 
 main {
@@ -45,6 +47,7 @@ footer {
 a {
 	color: rgb(255, 179, 0);
 	text-decoration: none;
+	font-family: 'Luminari', sans-serif;
 }
 
 #redfox{
@@ -58,6 +61,12 @@ a {
 	max-width: 600px;
 	min-width: 600px;
 	color:gray;
+	text-align:justify;
+}
+
+#feed_title {
+	font-family: 'Graphic CAT', sans-serif;
+	text-align: center;
 }
 
 #home_page {
