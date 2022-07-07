@@ -17,7 +17,7 @@ let currentStories = [feedOne, feedTwo, feedThree];
 
 function displayItem(feedItem) {
     document.getElementById('newsfeed').innerHTML +=
-    '<img src="' + feedItem.imageUrl + '" class="feedImage"/><br />'
+    '<img src="' + feedItem.imageUrl + '" class="feedImage"/>'
     + '<b><a href="' + feedItem.linkUrl + '">' + feedItem.title + '</a></b>'
     + '<p>' + feedItem.body + '</p><hr />';
 }
@@ -28,4 +28,4 @@ window.addEventListener('load', function() {
 
 document.getElementById('home_page').addEventListener('click', function () {
     goToLocation('/');
-})
+});s
