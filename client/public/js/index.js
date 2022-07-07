@@ -13,6 +13,8 @@ document.addEventListener('keyup', function checkKeyPress(e) {
   }
 });
 
+// Check if there is a click event on the button and go to /feed if so
+
 document.getElementById('fade_text').addEventListener('click', function () {
   goToLocation('/feed');
 });
