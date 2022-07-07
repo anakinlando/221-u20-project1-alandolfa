@@ -2,7 +2,7 @@ body {
   background-image: url("../images/squirrelbackground.jpg");
   background-color: #ffffff;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: relative;
  }
 
 #splash_title {
@@ -18,7 +18,7 @@ body {
 .menu_button {
 	background-color: blanchedalmond;
     font-size: 28px;
-    color: white;
+    color: black;
     cursor: pointer;
     text-align: center;
     user-select: none;
