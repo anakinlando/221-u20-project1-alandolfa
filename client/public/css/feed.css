@@ -23,7 +23,6 @@ body {
 main {
 	display: grid;
 	padding-top: 60px;
-	justify-content: center;
 }
 
 footer {
@@ -61,10 +60,18 @@ a {
 	max-width: 600px;
 	min-width: 600px;
 	color:gray;
-	text-align:justify;
+	text-align: justify;
+	justify-content: center;
+	margin: auto;
+	float: center;
 }
 
-#feed_title {
+#dailySquirrel {
+	text-align: left;
+	float: left;
+}
+
+.feed_title {
 	font-family: 'Graphic CAT', sans-serif;
 	text-align: center;
 }

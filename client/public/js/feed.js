@@ -26,13 +26,27 @@ function getCurrentFeed() {
         )
     },
     () => {
-        console.log('failure of retrieving stories!');s
+        console.log('failure of retrieving stories!');
     })
 }
 
+function deleteFeedItem(story) {
+    fetch(
+        '/api/currentStories/' + story,
+        {
+            method: 'DELETE',
+            headers: {
+                'Content-type':'application/json; charset=UTF-8'
+            },
+        }
+    )
+    .then(res => res.json())
+    .then(data => console.log(data))
+}
 // W3C event listener that passes currentStories through displayItem on page load
 
-window.addEventListener('load', function() {
+window.addEventListener('load', () => {
+    document.getElementById('newsfeed').innerHTML = "<h1 class='feed_title'>Spectacular Squirrel Stories!</h1>";
     getCurrentFeed();
 });
 
