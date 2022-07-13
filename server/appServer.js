@@ -35,4 +35,26 @@ app.route('/api/currentStories/:story')
 		currentStories.updateFeedItem(req, res)
 	})
 
+var squirrels = require('./controller/squirrelController')
+
+app.route('/api/squirrels')
+	.get((req, res) => {
+		squirrels.getSquirrels(req, res)
+	})
+	.post((req, res) => {
+		squirrels.saveSquirrel(req, res)
+	})
+
+app.route('/api/squirrels/:squirrelId')
+	.get((req, res) => {
+		squirrels.getSquirrel(req, res)
+	})
+	.delete((req, res) => {
+		squirrels.deleteSquirrel(req, res)
+	})
+	.patch((req, res) => {
+		squirrels.updateSquirrel(req, res)
+	})
+
 app.listen(1337, () => console.log('Listening on port 1337.'))
+

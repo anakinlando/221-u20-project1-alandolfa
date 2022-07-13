@@ -1,8 +1,6 @@
 const feedItem = require('../model/feedItem');
-const mySquirrel = require('../model/mySquirrel');
 
 let currentStories = [];
-let squirrels = [];
 
 var feedOne = feedItem.createFeedItem(
 	"Squirrel Stabs Chipmunk", 
@@ -30,24 +28,6 @@ var feedThree = feedItem.createFeedItem(
 );
 
 currentStories.push(feedThree);
-
-var squirrelOne = mySquirrel.createNewSquirrel(
-	"God",
-	"Purple",
-	5,
-	"Bob"
-);
-
-squirrels.push(squirrelOne);
-
-var squirrelTwo = mySquirrel.createNewSquirrel(
-	"Regular",
-	"Red",
-	25,
-	"Tim"
-)
-
-squirrels.push(squirrelTwo);
 
 exports.getFeedItems = function(req, res) {
 	res.setHeader('Content-Type', 'application/json');
