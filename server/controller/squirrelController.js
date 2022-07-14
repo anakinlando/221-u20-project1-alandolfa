@@ -68,3 +68,9 @@ exports.updateSquirrel = function(req, res) {
 	res.setHeader('Content-Type', 'application/json');
 	res.send(squirrels[req.params.squirrelId]);
 }
+
+exports.updateEntireFeedItem = function(req, res) {
+	squirrels[req.params.squirrelId] = req.body;
+	res.setHeader('Content-Type', 'application/json');
+	res.send(squirrels[req.params.squirrelId]);
+}

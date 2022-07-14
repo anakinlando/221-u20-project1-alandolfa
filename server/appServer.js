@@ -34,6 +34,9 @@ app.route('/api/currentStories/:story')
 	.patch((req, res) => {
 		currentStories.updateFeedItem(req, res)
 	})
+	.put((req, res) => {
+		currentStories.updateEntireFeedItem(req, res)
+	})
 
 var squirrels = require('./controller/squirrelController')
 
@@ -54,6 +57,9 @@ app.route('/api/squirrels/:squirrelId')
 	})
 	.patch((req, res) => {
 		squirrels.updateSquirrel(req, res)
+	})
+	.put((req, res) => {
+		squirrels.updateEntireSquirrel(req, res)
 	})
 
 app.listen(1337, () => console.log('Listening on port 1337.'))

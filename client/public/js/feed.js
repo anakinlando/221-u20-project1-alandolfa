@@ -15,14 +15,18 @@ function displayItem(feedItem, feedItemId) {
     // console.log(document.getElementById('newsfeed').innerHTML);
 }
 
+// Changes the HTML of the page to display the daily squirrel
+
 function displaySquirrel(dailySquirrel) {
-    document.getElementById('dailySquirrel').innerHTML +=
-    + '<h2>' + dailySquirrel.species + '</h2><br />'
-    + '<img src="' + dailySquirrel.imageUrl + '" class="feedImage"/><br />'
-    + '<h3>Color: ' + dailySquirrel.color + '</h3>'
+    document.getElementById('dailySquirrel').innerHTML
+    += '<img src="' + dailySquirrel.imageUrl + '" class="feedImage"/><br/>'
+    + '<h2>Species: ' + dailySquirrel.species + '</h2>'
     + '<h3>Name: ' + dailySquirrel.name +'</h3>'
-    + '<h3>Age: ' + dailySquirrel.age + '</h3>';
+    + '<h4>Color: ' + dailySquirrel.color + '</h4>'
+    + '<h5>Age: ' + dailySquirrel.age + '</h5>';
 }
+
+// Uses asynchronous fetch requests to get the daily squirrel and feed items
 
 function getCurrentFeed() {
     document.getElementById('newsfeed').innerHTML = "<h1 class='feed_title'>Spectacular Squirrel Stories!</h1>";
@@ -55,11 +59,19 @@ function getCurrentFeed() {
     })
 }
 
-function deleteFeedItem(story) {
+// Asynchronous fetch to add a story from the user's custom inputted story
+
+function addFeedItem(story) {
     fetch(
-        '/api/currentStories/' + story,
+        '/api/currentStories/',
         {
-            method: 'DELETE',
+            method: 'POST',
+            body: JSON.stringify({
+                title: story.title,
+                body: story.body,
+                imageUrl: story.imageUrl,
+                linkUrl: story.linkUrl
+            }),
             headers: {
                 'Content-type':'application/json; charset=UTF-8'
             },
@@ -68,12 +80,24 @@ function deleteFeedItem(story) {
     .then(res => res.json())
     .then(data => console.log(data))
 }
+
 // W3C event listener that passes currentStories through displayItem on page load
 
 window.addEventListener('load', () => {
     getCurrentFeed();
     console.log(document.getElementById('newsfeed').innerHTML);
 });
+
+function storySubmit(e) {
+    submittedStory = [
+        document.getElementById('title').value,
+        document.getElementById('body').value,
+        document.getElementById('linkUrl').value,
+        document.getElementById('imageUrl').value
+        ]
+}
+
+document.getElementById("form1").addEventListener('submit', storySubmit);
 
 document.getElementById('feedItem0').addEventListener('click', () => {
     console.log("Hello!")

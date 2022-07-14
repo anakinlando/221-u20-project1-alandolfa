@@ -73,3 +73,9 @@ exports.updateFeedItem = function(req, res) {
 	res.setHeader('Content-Type', 'application/json');
 	res.send(currentStories[req.params.story]);
 }
+
+exports.updateEntireFeedItem = function(req, res) {
+	currentStories[req.params.story] = req.body;
+	res.setHeader('Content-Type', 'application/json');
+	res.send(currentStories[req.params.story]);
+}

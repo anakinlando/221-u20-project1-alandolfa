@@ -67,11 +67,23 @@ a {
 }
 
 #dailySquirrel {
-	text-align: left;
+	text-align: center;
+	color: gray; 
 	float: left;
-	max-width:600px;
+	max-width: 600px;
 	position: fixed;
 	margin-left: 50px;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+#addCustomStory {
+	float: right; 
+	justify-content: right;
+	position: fixed;
+	margin-right: 50px;
+	left: 75%;
 	top: 50%;
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
@@ -108,3 +120,4 @@ a {
 	transition-duration: 0.4s;
 	cursor: pointer;
 }
+
