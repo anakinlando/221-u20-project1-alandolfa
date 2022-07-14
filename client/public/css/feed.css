@@ -69,6 +69,12 @@ a {
 #dailySquirrel {
 	text-align: left;
 	float: left;
+	max-width:600px;
+	position: fixed;
+	margin-left: 50px;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 
 .feed_title {
@@ -82,11 +88,23 @@ a {
 }
 
 .feedImage {
-	max-width: 125px;
-	max-height: 125px;
+	max-width: 600px;
+	max-height: 600px;
 	margin-right:5px;
 	border-style:solid;
 	border-radius: 4px;
 	border-color:black;
 }
 
+.button {
+	border: 8px;
+	border-color: black;
+	color: gray;
+	padding: 10x 20px;
+	text-align: center;
+	display: inline-block;
+	font-size: 14px;
+	margin: 4px 2px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+}

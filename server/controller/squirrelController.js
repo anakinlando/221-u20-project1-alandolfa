@@ -4,6 +4,7 @@ let squirrels = [];
 
 var squirrelOne = mySquirrel.createNewSquirrel(
 	"God",
+	"https://tse3.mm.bing.net/th?id=OIP.RWnLjQIX9aKv_kb9f_eWFgHaEK&pid=Api",
 	"Purple",
 	5,
 	"Bob"
@@ -13,6 +14,7 @@ squirrels.push(squirrelOne);
 
 var squirrelTwo = mySquirrel.createNewSquirrel(
 	"Regular",
+	"https://tse3.mm.bing.net/th?id=OIP._0rw2Rni-S3XdVfkG0k5rAHaD4&pid=Api",
 	"Red",
 	25,
 	"Tim"
@@ -26,7 +28,7 @@ exports.getSquirrels = function(req, res) {
 }
 
 exports.saveSquirrel = function(req, res) {
-	let newSquirrel = feedItem.createNewSquirrel(req.body.species, req.body.color, req.body.age, req.body.name);
+	let newSquirrel = feedItem.createNewSquirrel(req.body.species, req.body.imageUrl, req.body.color, req.body.age, req.body.name);
 	squirrels.push(newSquirrel);
 	res.setHeader('Content-Type', 'application/json');
 	res.send(squirrels);
@@ -51,6 +53,8 @@ exports.updateSquirrel = function(req, res) {
 	console.log(req.body.species);
 	if(req.body.title)
 		updatedSquirrel.species = req.body.species;
+	if (reqq.body.imageUrl)
+		updatedSquirrel.imageUrl = req.body.imageUrl;
 	if(req.body.color)
 		updatedSquirrel.color = req.body.color;
 	if(req.body.age)

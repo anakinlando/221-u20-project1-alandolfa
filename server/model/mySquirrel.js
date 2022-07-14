@@ -1,10 +1,11 @@
-function mySquirrel(species, color, age, name) {
+function mySquirrel(species, imageUrl, color, age, name) {
     this.species = species;
+    this.imageUrl = imageUrl;
     this.color = color;
     this.age = age;
     this.name = name;
 }
 
-exports.createNewSquirrel = (species, color, age, name) => {
-    return new mySquirrel(species, color, age, name)
+exports.createNewSquirrel = (species, imageUrl, color, age, name) => {
+    return new mySquirrel(species, imageUrl, color, age, name)
 }
