@@ -22,10 +22,14 @@ var squirrelTwo = mySquirrel.createNewSquirrel(
 
 squirrels.push(squirrelTwo);
 
+// Exports the squirrelController GET method to retrieve the list of current squirrels
+
 exports.getSquirrels = function(req, res) {
 	res.setHeader('Content-Type', 'application/json');
 	res.send(squirrels);
 }
+
+// Exports the squirrelController POST method to save a new mySquirrel
 
 exports.saveSquirrel = function(req, res) {
 	let newSquirrel = feedItem.createNewSquirrel(req.body.species, req.body.imageUrl, req.body.color, req.body.age, req.body.name);
@@ -34,10 +38,14 @@ exports.saveSquirrel = function(req, res) {
 	res.send(squirrels);
 }
 
+// Exports the squirrelController GET method to retrieve an individual squirrel from the squirrels API
+
 exports.getSquirrel = function(req, res) {
 	res.setHeader('Content-Type', 'application/json');
 	res.send(squirrels[req.params.squirrelId]);
 }
+
+// Exports the squirrelController DELETE method to delete an individual squirrel from the squirrels API
 
 exports.deleteSquirrel = function(req, res) {
 	squirrels.splice(req.params.squirrelId, 1);
@@ -45,11 +53,13 @@ exports.deleteSquirrel = function(req, res) {
 	res.send(squirrels);
 }
 
+// Exports the squirrelController PUT or PATCH methods to update a specific squirrel
+
 exports.updateSquirrel = function(req, res) {
-	// get the existing user from the array
+	// Get the existing squirel from the array
 	var updatedSquirrel = squirrels[req.params.squirrelId];
 
-	// check to see what has been passed and update the local copy
+	// Check to see what has been passed and update the local copy
 	console.log(req.body.species);
 	if(req.body.title)
 		updatedSquirrel.species = req.body.species;
@@ -62,15 +72,9 @@ exports.updateSquirrel = function(req, res) {
 	if(req.body.name)
 		updatedSquirrel.name = req.body.name;
 
-	// save the local copy of the user back into the array
+	// Save the local copy of the user back into the array
 	squirrels[req.params.squirrelId] = updatedSquirrel;
 
-	res.setHeader('Content-Type', 'application/json');
-	res.send(squirrels[req.params.squirrelId]);
-}
-
-exports.updateEntireFeedItem = function(req, res) {
-	squirrels[req.params.squirrelId] = req.body;
 	res.setHeader('Content-Type', 'application/json');
 	res.send(squirrels[req.params.squirrelId]);
 }

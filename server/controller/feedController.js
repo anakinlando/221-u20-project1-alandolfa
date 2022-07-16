@@ -1,6 +1,12 @@
+// Import feedItem model
+
 const feedItem = require('../model/feedItem');
 
+// Initalize a storage array for currentStories
+
 let currentStories = [];
+
+// feedOne, feedTwo, and feedThree are initialized feedItems that are pushed to currentStories
 
 var feedOne = feedItem.createFeedItem(
 	"Squirrel Stabs Chipmunk", 
@@ -29,10 +35,14 @@ var feedThree = feedItem.createFeedItem(
 
 currentStories.push(feedThree);
 
+// Exports the feedController GET method to retrieve the list of current stories
+
 exports.getFeedItems = function(req, res) {
 	res.setHeader('Content-Type', 'application/json');
 	res.send(currentStories);
 }
+
+// Exports the feedController POST method to save a new feedItem
 
 exports.saveFeedItem = function(req, res) {
 	let newFeedItem = feedItem.createFeedItem(req.body.title, req.body.body, req.body.linkUrl, req.body.imageUrl);
@@ -41,10 +51,14 @@ exports.saveFeedItem = function(req, res) {
 	res.send(currentStories);
 }
 
+// Exports the feedController GET method to retrieve an individual story from the currentStories API
+
 exports.getFeedItem = function(req, res) {
 	res.setHeader('Content-Type', 'application/json');
 	res.send(currentStories[req.params.story]);
 }
+
+// Exports the feedController DELETE method to delete an individual story from the currentStories API
 
 exports.deleteFeedItem = function(req, res) {
 	currentStories.splice(req.params.story, 1);
@@ -52,11 +66,13 @@ exports.deleteFeedItem = function(req, res) {
 	res.send(currentStories);
 }
 
+// Exports the feedController PUT or PATCH methods to update a specific story
+
 exports.updateFeedItem = function(req, res) {
-	// get the existing user from the array
+	// Get the existing user from the array
 	var updatedFeedItem = currentStories[req.params.story];
 
-	// check to see what has been passed and update the local copy
+	// Check to see what has been passed and update the local copy
 	console.log(req.body.title);
 	if(req.body.title)
 		updatedFeedItem.title = req.body.title;
@@ -67,15 +83,9 @@ exports.updateFeedItem = function(req, res) {
 	if(req.body.imageUrl)
 		updatedFeedItem.imageUrl = req.body.imageUrl;
 
-	// save the local copy of the user back into the array
+	// Save the local copy of the user back into the array
 	currentStories[req.params.story] = updatedFeedItem;
 
-	res.setHeader('Content-Type', 'application/json');
-	res.send(currentStories[req.params.story]);
-}
-
-exports.updateEntireFeedItem = function(req, res) {
-	currentStories[req.params.story] = req.body;
 	res.setHeader('Content-Type', 'application/json');
 	res.send(currentStories[req.params.story]);
 }
